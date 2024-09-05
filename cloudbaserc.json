@@ -1,0 +1,19 @@
+{
+  "envId": "{{env.ENV_ID}}",
+  "$schema": "https://framework-1258016615.tcloudbaseapp.com/schema/latest.json",
+  "version": "2.0",
+  "framework": {
+    "name": "ai-base-docs",
+    "plugins": {
+      "docs": {
+        "use": "@cloudbase/framework-plugin-website",
+        "inputs": {
+          "outputPath": "./docs",
+          "installCommand": "echo \"Skip Install\"",
+          "buildCommand": "echo \"Skip Build\"",
+          "cloudPath": "/ai-base-docs/"
+        }
+      }
+    }
+  }
+}
