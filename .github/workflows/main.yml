@@ -1,0 +1,20 @@
+name: 更新文档
+on: [push]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    name: AI base docs deploy
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Node.js 16
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: Deploy to Tencent CloudBase
+        uses: TencentCloudBase/cloudbase-action@v2.0.1
+        with:
+          secretId: ${{secrets.TCB_SECRET_ID}}
+          secretKey: ${{secrets.TCB_SECRET_KEY}}
+          envId: ${{secrets.TCB_ENV_ID}}
